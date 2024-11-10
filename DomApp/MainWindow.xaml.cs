@@ -26,7 +26,8 @@ namespace DomApp
 
             InitializeComponent();
 
-            _ = LoadValuesOfDom();
+            RunLoop = true;
+            _ = Task.Run(RefreshLoop);
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -35,6 +36,11 @@ namespace DomApp
             {
                 _ = SendRequest(slider.Name, e.NewValue == 1);
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            RunLoop = false;
         }
     }
 }

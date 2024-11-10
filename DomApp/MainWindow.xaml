@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DomApp"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Domek Paulina i Paweł ;)" Height="400" Width="350">
+        Title="Domek Paulina i Paweł ;)" Height="400" Width="350" Closed="Window_Closed">
     <Grid>
         <Label Content="Gościnny Duże" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="GoscinnyDuze" ValueChanged="Slider_ValueChanged" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="100" Maximum="1"/>

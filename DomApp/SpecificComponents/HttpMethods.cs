@@ -59,8 +59,8 @@ namespace DomApp
             }
             catch (Exception ex)
             {
+                ExceptionManagement.Log(ex, "HttpMethods", "LoadValuesOfDom");
                 debug.Content = ex.Message;
-                ExceptionManagement.Log(ex, "Lokalizacja1", "LoadValuesOfDom");
             }
         }
 
@@ -77,10 +77,12 @@ namespace DomApp
                         yield return (T)child;
                     }
 
+#pragma warning disable CS8604 // Możliwy argument odwołania o wartości null.
                     foreach (T childOfChild in FindVisualChildren<T>(child))
                     {
                         yield return childOfChild;
                     }
+#pragma warning restore CS8604 // Możliwy argument odwołania o wartości null.
                 }
             }
         }
@@ -104,8 +106,8 @@ namespace DomApp
             }
             catch (Exception ex)
             {
+                ExceptionManagement.Log(ex, "HttpMethods", "SendRequest");
                 debug.Content = ex.Message;
-                ExceptionManagement.Log(ex, "Lokalizacja1", "LoadValuesOfDom");
             }
         }
     }

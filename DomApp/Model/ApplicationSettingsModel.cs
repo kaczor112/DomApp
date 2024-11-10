@@ -12,6 +12,7 @@ namespace Model
         public bool Debug { get; set; }
         public string KeyID { get; set; }
         public string MyWebsite { get; set; }
+        public int LoopDelay { get; set; }
 
         public static ApplicationSettingsModel Default
         {
@@ -22,7 +23,8 @@ namespace Model
                     RefreshSettings = true,
                     Debug = true,
                     KeyID = "MojeID",
-                    MyWebsite = @"https://example.com/"
+                    MyWebsite = @"https://example.com/",
+                    LoopDelay = 500
                 };
             }
         }

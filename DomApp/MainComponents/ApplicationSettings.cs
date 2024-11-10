@@ -15,11 +15,9 @@ namespace MainComponents
         private const string SettingsFileName = "settingsFile.json";
 
         #region OrganizationalFunctions
-#pragma warning disable CS8618 // Pole niedopuszczające wartości null musi zawierać wartość inną niż null podczas kończenia działania konstruktora. Rozważ zadeklarowanie pola jako dopuszczającego wartość null.
 #pragma warning disable IDE1006 // Style nazewnictwa
         private static ApplicationSettingsModel applicationSettings { get; set; }
 #pragma warning restore IDE1006 // Style nazewnictwa
-#pragma warning restore CS8618 // Pole niedopuszczające wartości null musi zawierać wartość inną niż null podczas kończenia działania konstruktora. Rozważ zadeklarowanie pola jako dopuszczającego wartość null.
 
         private static void LoadData()
         {
@@ -86,6 +84,12 @@ namespace MainComponents
         {
             get => GetSetting<string>(nameof(MyWebsite));
             set => SetSetting(nameof(MyWebsite), value);
+        }
+
+        public static int LoopDelay
+        {
+            get => GetSetting<int>(nameof(LoopDelay));
+            set => SetSetting(nameof(LoopDelay), value);
         }
     }
 }
